@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Logged Out - TaskMate</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container py-4 d-flex align-items-center justify-content-center">
+
+    <div class="card shadow-lg border-0 rounded-4 text-center p-4" style="max-width: 500px; width: 100%;">
+
+        <div class="card-body">
+
+            <i class="bi bi-check-circle-fill text-success display-4 mb-2"></i>
+
+            <h2 class="fw-bold mb-2">
+                Logout Successful!
+            </h2>
+
+            <p class="text-muted mb-2">
+                Thank you for using <strong>TaskMate</strong>.
+            </p>
+
+            <p class="text-secondary mb-3">
+                You have been logged out successfully.<br>
+                We look forward to seeing you again!
+            </p>
+
+            <a href="{% url 'login' %}" class="btn btn-primary px-4">
+                <i class="bi bi-box-arrow-in-right"></i>
+                Login Again
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}

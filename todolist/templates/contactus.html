@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Contact Us - TaskMate</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="card shadow-lg border-0 rounded-4">
+
+        <div class="card-body p-5">
+
+            <h1 class="text-center text-primary mb-4">
+                <i class="bi bi-envelope-fill"></i>
+                Contact Us
+            </h1>
+
+            <p class="lead text-center">
+                We'd love to hear from you!
+            </p>
+
+            <p class="text-center">
+                If you have any questions, suggestions, or feedback about TaskMate,
+                please don't hesitate to contact us.
+            </p>
+
+            <hr>
+
+            <div class="row text-center">
+
+                <div class="col-md-4 mb-4">
+
+                    <i class="bi bi-envelope-fill display-5 text-primary"></i>
+
+                    <h5 class="mt-3">Email</h5>
+
+                    <p>support@taskmate.com</p>
+
+                </div>
+
+                <div class="col-md-4 mb-4">
+
+                    <i class="bi bi-clock-fill display-5 text-success"></i>
+
+                    <h5 class="mt-3">Business Hours</h5>
+
+                    <p>
+                        Monday – Friday<br>
+                        9:00 AM – 6:00 PM
+                    </p>
+
+                </div>
+
+                <div class="col-md-4 mb-4">
+
+                    <i class="bi bi-chat-dots-fill display-5 text-warning"></i>
+
+                    <h5 class="mt-3">Feedback</h5>
+
+                    <p>
+                        Your suggestions help us improve TaskMate and provide a better experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="alert alert-info mt-4 text-center">
+
+                <strong>Thank you for using TaskMate!</strong><br>
+
+                We appreciate your support and feedback.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
+
+{% comment %} {% extends "base.html" %}
+
+{% block title %}
+    <title>Contact Us</title>
+{% endblock title %}
+
+{% block content %}
+    <div class = "container">
+        <h1>{{contact_text}}</h1>
+{% endblock content %} {% endcomment %}

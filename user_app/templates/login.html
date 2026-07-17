@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+<title>Login - TaskMate</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container py-5">
+    <div class="row align-items-stretch justify-content-center">
+
+        <!-- LEFT SIDE: IMAGE -->
+        <div class="col-lg-7 d-none d-lg-flex">
+            <div class="w-100 h-100">
+                <img src="{% static 'images/register2.jpg' %}"
+                     class="img-fluid rounded shadow w-100 h-100"
+                     style="object-fit: cover;"
+                     alt="Login Image">
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: LOGIN FORM -->
+        <div class="col-lg-5 col-md-8">
+
+            <div class="card shadow-lg border-0 rounded-4 h-100">
+                <div class="card-body p-4">
+
+                    <h2 class="text-center mb-2">Welcome!</h2>
+                    <p class="text-center text-muted mb-4">
+                        Login to your TaskMate account
+                    </p>
+
+                    {% comment %} <!-- Django Messages -->
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="alert"
+                                        aria-label="Close">
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %} {% endcomment %}
+
+                    {% comment %} <!-- Form Errors -->
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            Invalid username or password. Please try again.
+                        </div>
+                    {% endif %}  {% endcomment %}
+
+                    <!-- Login Form -->
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        {{ form|crispy }}
+
+                        <button type="submit" class="btn btn-primary w-100 mt-3">
+                            Login
+                        </button>
+
+                        {% comment %} <div class="text-end mt-2">
+                            <a href="{% url 'password_reset' %}" class="text-decoration-none">
+                                Forgot Password?
+                            </a>
+                        </div> {% endcomment %}
+
+                        <hr>
+
+                        <p class="text-center mb-0">
+                            Don't have an account?
+                            <a href="{% url 'register' %}" class="text-decoration-none fw-semibold">
+                                Register
+                            </a>
+                        </p>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}
+
+
+{% comment %} {% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+<title>Login - Taskmate</title>
+{% endblock title %}
+
+{% block content %}
+
+<br>
+
+<div class="container">
+    <div class="row align-items-center">
+
+        <!-- LEFT SIDE: IMAGE -->
+        <div class="col-md-7 d-flex justify-content-center align-items-center"
+            style="min-height: 500px;">
+
+            <img src="{% static 'images/register1.jpg' %}"
+                class="img-fluid"
+                style="
+                    opacity: 0.85;
+                    filter: blur(0px) brightness(0.9) contrast(1.1);
+                    border-radius: 10px;
+                "
+                alt="Register Image">
+
+        </div>
+
+        <!-- RIGHT SIDE: FORM -->
+        <div class="col-md-5">
+
+            <div class="card shadow p-4">
+
+                <h2 class="mb-3 text-center">Login on TaskMate</h2>
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    {{ form|crispy }}
+
+                    <button type="submit" class="btn btn-primary w-100 mt-3">
+                        Login
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}
+
+ {% endcomment %}

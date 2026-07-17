@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>About Us - TaskMate</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="card shadow-lg border-0 rounded-4">
+
+        <div class="card-body p-5">
+
+            <h1 class="text-center text-primary mb-4">
+                <i class="bi bi-info-circle-fill"></i>
+                About TaskMate
+            </h1>
+
+            <p class="lead text-center">
+                Welcome to <strong>TaskMate</strong>, your simple and reliable task management companion.
+            </p>
+
+            <hr>
+
+            <h4>Our Mission</h4>
+
+            <p>
+                TaskMate is designed to help you organize your daily activities, manage your tasks efficiently,
+                and improve your productivity. We believe that staying organized should be simple and accessible
+                to everyone.
+            </p>
+
+            <h4 class="mt-4">What You Can Do</h4>
+
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    Create and manage your daily tasks
+                </li>
+
+                <li class="list-group-item">
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    Mark tasks as completed or pending
+                </li>
+
+                <li class="list-group-item">
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    Edit and delete your tasks anytime
+                </li>
+
+                <li class="list-group-item">
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    Secure user registration and login
+                </li>
+
+                <li class="list-group-item">
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    Access your personal task list securely
+                </li>
+
+            </ul>
+
+            <div class="alert alert-primary mt-4 text-center">
+
+                <strong>Thank you for choosing TaskMate!</strong><br>
+
+                We hope TaskMate helps you stay productive and organized every day.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
+
+{% comment %} {% extends "base.html" %}
+
+{% block title %}
+    <title>About Us</title>
+{% endblock title %}
+
+{% block content %}
+    <div class = "container">
+        <h1>{{about_text}}</h1>
+    </div>
+{% endblock content %}
+    
+ {% endcomment %}

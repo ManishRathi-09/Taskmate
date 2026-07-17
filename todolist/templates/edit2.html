@@ -1,0 +1,41 @@
+
+{% extends "base.html" %}
+
+
+{% block title %}
+    <title>Edit Task</title>
+{% endblock title %}
+
+{% block content %}
+    <div class= 'container mt-5'>
+        <h2 class="text-center mb-4">📝 Your Task Editor</h2>
+
+        <form method="POST" class="row justify-content-center">
+            {% csrf_token %}
+        
+            <div class="col-lg-8">
+                <input
+                    type="text"
+                    id="task"
+                    name="task"
+                    class="form-control border-primary"
+                    placeholder="{{task_obj.task}}" 
+                    value ="{{task_obj.task}}" 
+                >
+            </div>
+        
+            <!-- Buttons -->
+            <div class="col-lg-8 mt-3 d-flex gap-3 justify-content-center">
+
+                <button type="submit" class="btn btn-primary btn-lg flex-fill">
+                    Update Task
+                </button>
+
+                <a href="{% url 'todolist' %}" class="btn btn-secondary btn-lg flex-fill text-center">
+                    Cancel
+                </a>
+
+            </div>
+        </form>
+    </div>
+{% endblock content %}
